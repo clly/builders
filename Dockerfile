@@ -9,7 +9,7 @@ FROM ruby
 
 # Install FPM.
 RUN gem install fpm
-RUN apt-get update && apt-get install -y rpm zip && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get upgrade -y && apt-get install -y rpm zip createrepo && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Define working directory.
 WORKDIR /data
